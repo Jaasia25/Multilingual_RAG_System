@@ -35,7 +35,7 @@ class ChatWithLLaMA:
             f"{'তোমার কাছে নিম্নলিখিত তথ্য আছে' if bangla else 'You have the following information'}:\n\n"
             f"{context}\n\n"
             f"{'উপরের তথ্য ব্যবহার করে এই প্রশ্নের উত্তর দাও' if bangla else 'Using the above information, answer this question'}:\n{query} "
-            f"{'শুদ্ধু বাংলায় উত্তর দাও' if bangla else 'Answer in English'}"
+            f"{'বাংলায় প্রশ্ন করলে বাংলায় উত্তর দাও' if bangla else 'If the question is asked in English, Answer in English'}"
         )
         response = self.llama.chat(
             model=self.llama_model,

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🌐 Multilingual RAG System
 
 A Retrieval-Augmented Generation (RAG) system that supports both Bangla and English languages for document-based question answering.
@@ -18,7 +17,7 @@ A Retrieval-Augmented Generation (RAG) system that supports both Bangla and Engl
 
 ```bash
 python -m venv venv
-.env\Scriptsctivate  # On Windows
+.venv\Scripts\activate  # On Windows
 ```
 
 ---
@@ -27,6 +26,21 @@ python -m venv venv
 
 ```bash
 pip install -r requirements.txt
+```
+
+---
+
+### ✅ Extract the text through Pytesseract OCR
+
+```bash
+python extract_data.py
+```
+---
+
+### ✅ Save the text to chroma (Vector database)
+
+```bash
+python vector_store.py
 ```
 
 ---
@@ -46,9 +60,9 @@ uvicorn main:app --reload
 - **Jina Embeddings** – Multilingual text embedding model
 - **ChromaDB** – Vector database for document retrieval
 - **Ollama / LLaMA3** – LLM backend for generating responses
+- **Pytesseract(Bn+En)** - For Bangla and English text extraction from PDF
 - **PyMuPDF / OCR** – For PDF and image processing
 - **Langdetect** – For auto-detecting Bangla/English
-- **Streamlit** – (Optional) For frontend UI
 - **Uvicorn** – ASGI server
 
 ---
@@ -60,14 +74,20 @@ uvicorn main:app --reload
 **Query:**
 
 ```text
-What is the interest rate for savings accounts?
+Who is referred to as the god of luck in Anupam?
 ```
 
 **Response:**
 
 ```text
-The current interest rate for savings accounts is 4.5% annually.
+According to the text, Lakshmi (the goddess of wealth and good fortune) is referred to as the god of luck for Anupam.
 ```
+
+### FASTAPI English Response
+
+![English Response](readme_images\10ms2.png)
+
+
 
 ---
 
@@ -76,14 +96,19 @@ The current interest rate for savings accounts is 4.5% annually.
 **Query (in Bangla):**
 
 ```text
-সেভিংস অ্যাকাউন্টের ইন্টারেস্ট রেট কত?
+কাকে অনুপমের ভাগ্য দেবতা বলে উল্লেখ করা হয়েছে?
 ```
 
 **Response:**
 
 ```text
-সেভিংস অ্যাকাউন্টের জন্য বর্তমান সুদের হার বার্ষিক ৪.৫%।
+According to the text, মামাকে (Mama) is referred to as ভাগ্য দেবতা (Luck God) by Anupom's character. This means that Anupom considers his uncle (Mama) to be a person of great influence and importance in his life, much like a deity who can bring good or bad luck.
 ```
+
+### FASTAPI Bangla Response
+
+![Bangla Response](readme_images\10ms1.png)
+
 
 ---
 
@@ -92,34 +117,16 @@ The current interest rate for savings accounts is 4.5% annually.
 Once the FastAPI server is running, access the API docs at:
 
 - **Swagger UI:** http://localhost:8000/docs  
-- **ReDoc:** http://localhost:8000/redoc
 
 ---
 
 ## 📍 Available Endpoints
 
-### 1. Upload PDF and Store Embeddings
 
-```http
-POST /upload
-```
-
-**Form Data:**
-
-- `file`: PDF file (English or Bangla)  
-- `bangla`: `true` or `false` (whether the document is in Bangla)
-
-**Response:**
-
-```json
-{
-  "message": "Embeddings stored successfully."
-}
-```
 
 ---
 
-### 2. Query the Chatbot
+### Query the Chatbot
 
 ```http
 POST /query
@@ -138,9 +145,7 @@ POST /query
 
 ```json
 {
-  "answer": "এখানে উত্তর আসবে"
+  "response": "এখানে উত্তর আসবে"
 }
 ```
 =======
-
->>>>>>> dbab176884bc5642ab204554f8ccb13fc4786348
