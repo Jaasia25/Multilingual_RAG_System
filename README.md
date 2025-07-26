@@ -85,7 +85,7 @@ According to the text, Lakshmi (the goddess of wealth and good fortune) is refer
 
 ### FASTAPI English Response
 
-![English Response](readme_images\10ms2.png)
+![English Response](readme_images/10ms2.png)
 
 
 
@@ -107,7 +107,7 @@ According to the text, মামাকে (Mama) is referred to as ভাগ্�
 
 ### FASTAPI Bangla Response
 
-![Bangla Response](readme_images\10ms1.png)
+![Bangla Response](readme_images/10ms1.png)
 
 
 ---
