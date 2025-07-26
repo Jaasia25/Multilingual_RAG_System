@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌐 Multilingual RAG System
 
 A Retrieval-Augmented Generation (RAG) system that supports both Bangla and English languages for document-based question answering.
@@ -140,3 +141,6 @@ POST /query
   "answer": "এখানে উত্তর আসবে"
 }
 ```
+=======
+
+>>>>>>> dbab176884bc5642ab204554f8ccb13fc4786348
